@@ -1,0 +1,321 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   
+body {
+	background-color:#280203;
+	width:100%;
+}
+
+.site-top-menu {
+	background-color:#fff;
+}
+
+
+/* Homepage Branding */
+.lego-logo {
+	margin:0 auto;
+	max-width:1369px;
+}
+
+.lego-logo img {
+	position:relative;
+	z-index:1000;
+	margin:20px 0 -20px 10px;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+	
+}
+
+
+/* Footer and Footer Wrapper */
+.homepage-footer-wrap {
+    font-family: Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 10px;
+    color: #696664;
+    background-color: #FCFBFA;
+    background-image: linear-gradient(to bottom, #FCFBFA 0%, #ECECEC 40%);
+    border-top: 1px solid #EEE;
+    margin-top: 48px;
+    padding-bottom: 24px;
+}
+
+.homepage-footer {
+	max-width:1152px;
+	margin: 0 auto;
+}
+
+/** Footer Groups */
+.homepage-footer .footer-groups {
+    margin: 36px 12px 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.homepage-footer .footer-groups h5 {
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 12px;
+    font-family: "Ubuntu",Arial,sans-serif;
+    color: #4A88C1;
+    margin: 15px 0px 15px 0px;
+ }
+
+.homepage-footer .footer-groups > li {
+    padding: 0px 0px 0px 10px;
+    width: 220px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.homepage-footer .footer-groups > li a {
+    text-decoration: none;
+}
+
+.homepage-footer .footer-groups > li ul {
+	list-style-type: none;
+	padding: 0px;
+	margin-bottom: 15px;
+}
+
+.homepage-footer .footer-groups > li li {
+	line-height: 15px;
+}
+
+.homepage-footer .footer-groups > li li a:hover {
+    color: #42403F;
+}
+
+.homepage-footer .footer-groups > li li a {
+    display: inline-block;
+    color: #696664;
+    line-height: 12px;
+}
+
+.homepage-footer .footer-groups >li li::before {
+    content: "›";
+    color: #74B8D1;
+    font-size: 10px;
+    margin-right: 6px;
+}
+
+/** Footer Links **/
+.homepage-footer .footer-links {
+    margin: 12px 12px 0px;
+    padding: 0px;
+}
+
+.homepage-footer .footer-links li {
+    display: inline-block;
+}
+
+.homepage-footer .footer-links li::before {
+    font-size: 10px;
+    display: inline-block;
+    content: "•";
+    color: #D9534F;
+    margin-right: 6px;
+}
+
+.homepage-footer .footer-links li a {
+    display: inline-block;
+    color: #696664;
+    text-decoration: none;
+    padding-right: 6px;
+}
+
+/* Footer Legal */
+.homepage-footer .footer-legal {
+    list-style-type: none;
+    margin: 12px 12px 0px;
+    color: #9C9997;
+    padding: 0px;
+}
+
+
+
+/* Smartphones (portrait and landscape) col-xs ----------- */
+@media only screen and (min-width : 320px) {
+	#legoHeader {
+		max-width:320px;
+		background-size:cover;
+		height:110px;
+		background:url(../img/lego-header-bg.png) no-repeat top right;
+		margin:0 auto;
+		overflow:hidden;
+	}
+	
+	#legoHeader .lego-ninjago-logo {
+		float:left;
+		margin-left:10px;
+	}
+	
+	.homepage-middle {
+		max-width:320px;
+	}
+	
+	.homepage-middle-but {
+		max-width:320px;
+	}
+	
+	
+	.carousel img {
+		max-width:100%;
+		height:auto;
+	}
+	
+	.carousel {
+		max-width:320px;
+		margin:0 auto;
+	}
+	
+}
+
+/* Tablets (Portrait) col-sm  -----------  */
+@media only screen and (min-width : 767px) {
+	.lego-logo img {
+		position:relative;
+		z-index:1000;
+		margin:20px 0 -20px 10%;
+	}
+	
+	#legoHeader {
+		max-width:640px;
+		background-size:cover;
+		height:149px;
+		background:url(../img/lego-header-bg.png) no-repeat top right;
+		margin:0 auto;
+		overflow:hidden;
+	}
+	
+	#legoHeader .lego-ninjago-logo {
+		float:right;
+		margin-right:-90px;
+	}
+	
+	#homepage-top-head {
+		background-color:#fff;
+		height:52px;
+		max-width:640px;
+		margin:0 auto;
+	}
+	
+	.homepage-middle {
+		max-width:640px;
+	}
+	
+	.homepage-middle-but {
+		max-width:100%;
+		height:auto;
+	}
+	
+	.carousel img {
+		max-width:100%;
+		height:auto;
+	}
+	
+	.carousel {
+		max-width:640px;
+		margin:0 auto;
+	}
+}
+
+/* Desktop (any orientation) And Tablets (Landscape)  col-md ----------- */
+@media only screen and (min-width : 991px) {
+	.lego-logo img {
+		position:relative;
+		z-index:1000;
+		margin:20px 0 -20px 10%;
+	}
+	
+	#legoHeader {
+		max-width:991px;
+		background-size:cover;
+		height:149px;
+		background:url(../img/lego-header-bg.png) no-repeat top right;
+		margin:0 auto;
+	}
+
+	#menuHolder {
+		max-width:991px;
+		margin: -47px auto 0 auto;
+	}
+	
+	#legoHeader .lego-ninjago-logo {
+		float:right;
+		margin-right:100px;
+	}
+	
+	#homepage-top-head {
+		background-color:#fff;
+		height:52px;
+		max-width:991px;
+		margin:0 auto;
+	}
+	
+	.homepage-middle {
+		max-width:991px;
+	}
+	
+	.homepage-middle-but {
+		max-width:247px;
+	}
+	
+	.carousel img {
+	}
+	
+	.carousel {
+		max-width:991px;
+		margin:0 auto;
+	}
+}
+
+/* Desktop (any orientation) And Tablets (Landscape)  col-lg ----------- */
+@media only screen and (min-width : 1200px) {
+	#legoHeader {
+		max-width:1369px;
+		background-size:cover;
+		height:149px;
+		background:url(../img/lego-header-bg.png) no-repeat top right;
+		margin:0 auto;
+	}
+	
+
+	#menuHolder {
+		max-width:1369px; 
+		margin: -47px auto 0 auto;
+	}
+	
+	
+	#legoHeader .lego-ninjago-logo {
+		float:right;
+		margin-right:136px;
+	}
+	
+	#homepage-top-head {
+		background-color:#fff;
+		height:52px;
+		max-width:1369px;
+		margin:0 auto;
+	}
+	
+	.homepage-middle {
+		max-width:1369px;
+	}
+	
+	.homepage-middle-but {
+		max-width:342px;
+	}
+	
+	.carousel img {
+	}
+	
+	.carousel {
+		max-width:1369px;
+		margin:0 auto;
+	}
+	
+
+}
