@@ -1,0 +1,107 @@
+
+/* Footer and Footer Wrapper */
+.homepage-footer-wrap {
+    font-family: Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 10px;
+    color: #696664;
+    background-color: #FCFBFA;
+    background-image: linear-gradient(to bottom, #FCFBFA 0%, #ECECEC 40%);
+    border-top: 1px solid #EEE;
+    padding-bottom: 24px;
+	// 	height: 800px;
+ }
+
+.homepage-footer {
+	max-width:1152px;
+	margin: 0 auto;
+}
+
+/** Footer Groups */
+.homepage-footer .footer-groups {
+    margin: 36px 12px 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.homepage-footer .footer-groups h5 {
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 12px;
+    font-family: "Ubuntu",Arial,sans-serif;
+    color: #4A88C1;
+    margin: 15px 0px 15px 0px;
+ }
+
+.homepage-footer .footer-groups > li {
+    padding: 0px 0px 0px 10px;
+    width: 220px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.homepage-footer .footer-groups > li a {
+    text-decoration: none;
+}
+
+.homepage-footer .footer-groups > li ul {
+	list-style-type: none;
+	padding: 0px;
+	margin-bottom: 15px;
+}
+
+.homepage-footer .footer-groups > li li {
+	line-height: 15px;
+}
+
+.homepage-footer .footer-groups > li li a:hover {
+    color: #42403F;
+}
+
+.homepage-footer .footer-groups > li li a {
+    display: inline-block;
+    color: #696664;
+    line-height: 12px;
+}
+
+.homepage-footer .footer-groups >li li::before {
+    content: "›";
+    color: #74B8D1;
+    font-size: 10px;
+    margin-right: 6px;
+}
+
+/** Footer Links **/
+.homepage-footer .footer-links {
+    margin: 12px 12px 0px;
+    padding: 0px;
+}
+
+.homepage-footer .footer-links li {
+    display: inline-block;
+}
+
+.homepage-footer .footer-links li::before {
+    font-size: 10px;
+    display: inline-block;
+    content: "•";
+    color: #D9534F;
+    margin-right: 6px;
+}
+
+.homepage-footer .footer-links li a {
+    display: inline-block;
+    color: #696664;
+    text-decoration: none;
+    padding-right: 6px;
+}
+
+/* Footer Legal */
+.homepage-footer .footer-legal {
+    list-style-type: none;
+    margin: 12px 12px 0px;
+    color: #9C9997;
+    padding: 0px;
+}
