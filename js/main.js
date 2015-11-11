@@ -1,119 +1,140 @@
 $(function(){
+	var endAni = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+	var $icon = $('span.hidden-menu-icon');
+	var menuopen = false;
+	preload("img/unlock-glow.png","img/menu-bg-small-blank.gif");
+
+	/* Adjust bottom footer height */
+	fixFooterHeight();
 	
-	//fixHeight();
-		
+	/* Start Carousel */
+	$("#ninjago-carousel").owlCarousel({
+	    navigation : true,
+	    singleItem : true,
+	    rewindNav : true,
+	    transitionStyle : "backSlide",
+	    addClassActive : true
+    });
+	
 	$('#ninjago-logo').addClass('animated fadeIn');
 	
-	$(".lego-logo").on('click',function(){
-		if(checkWindowSize(990)){
-			$('#hidden-menu').slideToggle("slow" );
-		}
-	});
-	
-	$( window ).resize(function() {
-		//if hidded is false it's showing
-		if( (!$( "#hidden-menu" ).is( ":hidden" )) && ($(window).width() > 990) ){
-			$('#hidden-menu').hide( "slow" );
-		}
-		
-		//fixHeight();
-	});
-	
-	/* OLD TEST JS */
-	$('#buttonCover1').on('mouseover',function(){
-		$(this).toggle("slow" );
-	});
-	
-	
-	$('#buttonCover2').on('mouseover',function(){
-		$('#buttonCover2 #cover').addClass('animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-			$(this).removeClass('animated shake');
-		});
-	});
-	
-	function addWelcomAnimation(button,ani){
-		$(button +' #enterButton').on('mouseover',function(){
-			$(button +' #enterButton').addClass('animated '+ ani).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-				$(this).removeClass('animated '+ ani);
-			});
-		});
+	/* if window opens small enable check box */
+	if(checkWindowSize(992)){
+		$("#offcanvas-menu").removeAttr("disabled");
 	}
 	
-	
-	/* Working Animations */
-	/* First Button */
-	/*
-	$('#buttonWrapper1 #enterButton').on('mouseover',function(){
-		$('#buttonWrapper1 #enterButton').addClass('animated tada').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-			$(this).removeClass('animated tada');
-		});
-	});
-	*/
-	$('#buttonWrapper1').on('mouseover',function(){
-		$('#buttonWrapper1').addClass('animated pulse').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-			$(this).removeClass('animated pulse');
-		});
-	});
-	addWelcomAnimation('#buttonWrapper1','tada');
-	
-
-	/* Second Button */
-	$('#buttonWrapper2').on('mouseover',function(){
-		$('#buttonWrapper2 #lockOverlay #lock')
-			.addClass('animated swing')
-			.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-				$(this).removeClass('animated swing');
-			});
-	});
-	
-	$('#buttonWrapper2').on('click',function(){
+	/* Open Mobile Menu On Resize */
+	$(window).resize(function() {
+		fixFooterHeight();
 		
-		$('#buttonWrapper2 #lockOverlay #lock img')
-			.attr('src', 'img/unlock.png')
-			.addClass('animated zoomOutDown')
-			.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-				
-				$('#buttonWrapper2 #lockOverlay').addClass('animated slideOutDown');
-				
-				$('#buttonWrapper2').on('mouseover',function(){
-					$('#buttonWrapper2').addClass('animated pulse').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-						$(this).removeClass('animated pulse');
-					});
-				});
-					
-				addWelcomAnimation('#buttonWrapper2','bounce');
-				
-				
-				
-			});
+		/* if window opens small enable check box */
+		if(checkWindowSize(992)){
+			$icon.rotate(0);
+			$("#offcanvas-menu").removeAttr("disabled");		
+		} else {
+			//console.log($icon.css("opacity"));
+			$("#offcanvas-menu").attr("disabled", true);
+		}	 
+		$('#offcanvas-menu').prop('checked', false);
 	});
 	
-	/* Third Button */
-	$('#buttonWrapper3').on('mouseover',function(){
-		$('#buttonWrapper3 #lockOverlay #lock')
-			.addClass('animated shake')
-			.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-				$(this).removeClass('animated shake');
+	
+	$( "#offcanvas-menu" ).bind( "change", function() {
+		if(!menuopen){
+			menuopen = true;
+			$icon.rotate(-90);		
+		} else {
+			menuopen = false;
+			$icon.rotate(0);
+		}
+	});
+	
+	/** Homepage Animations **/
+	/* First Season Button */
+	$('#enterButtonOverlay').on('mouseover',function(){
+		$next = $('#enterButtonOverlay').next();
+		runAnimation($next,'pulse');
+		runAnimation('#enterButtonOverlay','tada');
+	});
+	
+	
+	/* Second Season Button */
+	var buttonUnlock = true;
+	$('#unlockOverlay1').on('mouseover',function(){
+		if(buttonUnlock){
+			runAnimation('#unlockOverlay1 #lock','swing');
+		}			
+	});
+	
+	$('#unlockOverlay1').on('click',function(){
+		
+		buttonUnlock = false;
+		
+		$("#unlockOverlay1 #lock").animate({'opacity':1},500,function(){
+			
+			$("#unlockOverlay1 #lock img").fadeOut(10,function() { 
+				
+			  	 	$(this).attr('src', 'img/unlock-glow.png').fadeIn(1000).addClass('poplock2').one(endAni, function(){
+					
+					$('#unlockOverlay1').addClass('animated slideOutDown');
+					
+					$('#enterButtonOverlay1').on('mouseover',function(){		
+						$next = $('#enterButtonOverlay1').next();
+						runAnimation($next,'pulse');
+						runAnimation('#enterButtonOverlay1','bounce');
+					});
+						
+				});;
+			}); 
+			
 		});
+		
+
+	});
+	
+	/* Third Season Button */
+	$('#lockOverlay3').on('mouseover',function(){
+		//runAnimation('#lockOverlay3 #lock','shake');
+		$(this).runAnimation('shake','#lock');
 	})
 	
-	/* Four Button */
-	$('#buttonWrapper4').on('mouseover',function(){
-		$('#buttonWrapper4 #lockOverlay #lock').addClass('animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-			$(this).removeClass('animated shake');
-		});
+	/* Fourth Season Button */
+	$('#lockOverlay4').on('mouseover',function(){
+		//runAnimation('#lockOverlay4 #lock','shake');
+		$(this).runAnimation('shake','#lock');
 	})
 	
-})
+	
+	/* Utilies */
+	function runAnimation(selector,ani){
+		//console.log("Mouse Over" + selector + " " + ani);
+		$(selector).addClass('animated '+ ani).one(endAni, function(){
+			$(this).removeClass('animated '+ ani);
+		});	
+		
+		return;
+	}
 
-function fixHeight() {
-    var $h = $('#overlay2').height();
-    //jQuery('#myDiv').css('background-image').height();
-    //console.log($('#buttonWrapper1').css('height'));
-	 console.log($('overlay2').css('height'));
+	// Carousel Events
+	var $activelink = "";
+	var $clickableDiv = $('.ninjago-href');
+	$clickableDiv.on('mouseover',function(){
+		$activelink =  $('#ninjago-carousel .owl-wrapper-outer .owl-wrapper .owl-item.active').find('.item').data('urllink');
+		//console.log($activelink);	
+	});
+	$clickableDiv.on('click',function(){
+		if($activelink != null){
+			window.open($activelink,"_blank");
+		}
+	});     
+});
 
-    $('#buttonCol').height($h);
+
+function fixFooterHeight() {
+    var $h = $("footer").height();
+    $('#footer-wrap').height($h * 2);
 }
+	
 	
 function checkWindowSize(size) {
    var pageWidth = $(window).width();  
@@ -123,17 +144,49 @@ function checkWindowSize(size) {
    return false;
 }
 
-
-
-/* GET CSS BG HEIGHT */
-function getBGHeight(div){
-
-	var img = new Image;
-	img.src = $(div).css('background-image').replace(/url\(|\)$/ig, "");
-	var bgImgWidth = img.width;
-	var bgImgHeight = img.height;
-	
-	console.log (bgImgHeight);
-
+function preload() {
+	var images = Array();
+	for (i = 0; i < preload.arguments.length; i++) {
+		images[i] = new Image()
+		images[i].src = preload.arguments[i]
+	}
 }
+	
+	
+/* JQuery Functions */	
+jQuery.fn.rotate = function(degrees) {
+	
+	var rotate = "rotate(" + degrees + "deg)";
+    var trans = "all 0.3s ease-out";
+	$(this).css({
+                "-webkit-transform": rotate,
+                "-moz-transform": rotate,
+                "-o-transform": rotate,
+                "msTransform": rotate,
+                "transform": rotate,
+                "-webkit-transition": trans,
+                "-moz-transition": trans,
+                "-o-transition": trans,
+                "transition": trans});
 
+    return $(this);
+};
+
+
+jQuery.fn.runAnimation = function(animation, subselector) {
+	
+	var endAni = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'	;
+	
+	if (typeof subselector !== 'undefined') {
+		$(this).find(subselector).addClass('animated '+ animation).one(endAni, function(){
+			$(this).removeClass('animated '+ animation);
+		}); 
+	} else {
+		$(this).addClass('animated '+ animation).one(endAni, function(){
+			$(this).removeClass('animated '+ animation);
+		});	
+	}
+		
+    return $(this);
+};
+			

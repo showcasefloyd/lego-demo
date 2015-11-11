@@ -1,0 +1,85 @@
+/* Fly out menu */
+.hidden-menu-icon {
+    font-size: 38px;
+	color: #CE161E;
+	position: relative;
+	top: -10px;
+}
+
+.toggle-menu, .full-screen-close {
+	display: none;
+}
+
+.full-screen-close {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	cursor: pointer;
+	top:0;
+	left:0;
+}
+
+/*----------  toggle-menu  ----------*/
+.toggle-menu:checked + .container-fluid > .menu-container {
+  	margin-left: 0;
+  	margin-top: 47px; 	
+}
+
+.toggle-menu:checked + .container-fluid  > .container-fluid .full-screen-close {
+  	display: block;
+  	background: rgba(0,0,0,.5);
+}
+
+.toggle-menu-btn {
+	cursor: pointer;
+}
+	
+/* This is the menu */
+.menu-container {
+	background-color: #1798ca;
+	color: #fff; 
+	width: 42%;
+	margin-left: -42%;
+	margin-top: 47px;
+	float: left;
+	height:460px;
+	position: absolute;
+	z-index:100;
+	transition: margin 0.4s ease-in-out;	
+}
+
+.mobile-menu {
+	font-family: 'Exo 2', sans-serif;
+}
+
+.mobile-menu ul {
+	padding: 0; margin: 0;
+}
+
+.mobile-menu li {
+	list-style: none;
+	width:100%;
+}
+
+
+/* ICONS */
+.mobile-menu i {
+	margin-right: 1rem;
+	font-size: 1.8rem;
+	vertical-align: middle;
+}
+/* MENU LINKS */
+.mobile-menu li a {
+	color: #fff;
+	padding: 1.5rem;
+	font-size: 1.125rem;
+	text-transform: uppercase;
+	font-weight: 600;
+		display: block;
+	transition: background-color .5s ease-in-out;
+}
+.mobile-menu li a:hover {
+	color: #000;
+	background-color: #fff;
+}
+

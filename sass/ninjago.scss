@@ -3,13 +3,28 @@
    ========================================================================== */
 @import "bourbon/bourbon";   
    
-$seasonFullW: 343px;
-$seasonFullH: 340px;
+$seasonFullW: 	343px;
+$seasonFullH: 	340px;
 
-$desktopMaxD: 1369px;
-$desktopMaxW: 1199px;
-$desktopMaxT: 990px;
-$desktopMaxM: 766px;
+$break-small: 	320px;
+$break-medium: 	768px;
+$break-large: 	1200px;
+
+$MinDesktop: 	991px;
+$MinTablet: 	767px;
+$MinMobile: 	320px;
+
+$fullPageWidth: 1369px;
+$footerWidth:   1152px;
+
+$MaxLarge: 		1369px;
+$MaxDesktop: 	1199px;
+$MaxTablet: 	990px;
+$MaxMobile: 	766px;
+
+$background-color:#280203;
+$lego-red: #E10D1D;
+
 
 $thumbnails: (
   "../img/lego-ninjago-season-01.jpg",
@@ -21,7 +36,10 @@ $thumbnails: (
 @import 'reset';
 
 body {
-	background-color:#280203;
+	//background-color:$background-color;
+	background-image:url('../img/bgs/branding-main-frontpage-background-2hy.jpg');
+	background-size: cover;
+	background-repeat:no-repeat;
 	width:100%;
 }
 
@@ -40,46 +58,32 @@ body {
 /* Homepage LEGO Branding */
 .lego-logo {
 	margin:0 auto;
-	max-width:1369px;
-	position:absolute;
-	left:10px;
+	//max-width:1369px;
+	max-width:1000px;
 }
 
-/* Fly out menu */
-#hidden-menu {
-	width:300px; 
-	/* 	background-color: #1698CA;  */
-	background-color: #fff;
-	color: black; 
-	height: 200px; 
-	border: 1px solid black; 
-	display: none; 
-	position: absolute; 
-	z-index: 500; 
-	padding: 10px; 
-	// 	margin: -10px 0px -100px 15px;
-	top: 47px;
-}
-
-#hidden-menu ul {
-	padding: 0; margin: 0;
-}
-
-#hidden-menu li {
-	list-style: none;
-}
 
 /* Menu across the top of the page. Fix for the animation */
 #menuHolder {
-	z-index:1; 
 	position: relative;
+	z-index:1; 
+}
+
+#ninjago-menu-sm {
+	width:100%;
 }
 
 /* Footer Styles */
 @import 'footer-styles';
 
 /* Animation Styles */
-//@import 'custom-animations';
+@import 'custom-animations';
+
+/* Carousel */
+@import 'carousel';
+
+
+@import 'mobilemenu';
 
 /* Action Button */
 @each $thumbnail in $thumbnails {
@@ -97,60 +101,69 @@ body {
 	//#project-#{$i}:hover #lockOverlay { opacity:1;}
 }
 
-#lockOverlay {  
+/* Lock Overlay */
+ #unlockOverlay1, #lockOverlay3, #lockOverlay4 {  
 	background-color: black;
 	text-align:center;
-	padding:100px 0 150px 0;
+	padding:25% 0 150px 0;
 	width: 100%;
 	opacity:.5;
 	position: absolute;
-	-webkit-transition: opacity 0.5s ease;
-	-moz-transition: opacity 0.5s ease;
+	box-shadow:         inset 0px 0px 20px #000000;
+	-moz-box-shadow:    inset 0px 0px 20px #000000;
+    -webkit-box-shadow: inset 0px 0px 20px #000000;
+    z-index: 100;
+	@include transition(all .8s ease-in  0s);
 }
 
-#lockOverlay:hover {
+ #frame2 div, #frame2 img {
+     cursor:url(../img/key-36.png),auto;
+ }
+ 
+
+ #unlockOverlay1:hover, #lockOverlay3:hover, #lockOverlay4:hover {
   	background-color: black;
   	opacity: .7;
 }
 
 #lock {  
+	 cursor: pointer;
 	 margin: 10px;
-	 color:rgba(255,255,255,.20);
-	 font-size:44px;
-	 color: #291C0B;
-	 opacity: 0.5;
+	 opacity: .7;
 }
 
-#enterButtonOverlay {  
+#lock img {
+	width: 23%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#enterButtonOverlay, #enterButtonOverlay1  {  
 	text-align:center;
 	width: 100%;
 	position: absolute;
+	z-index: 50;
 }
 
-#enterButton {
-    // margin: 80px auto;   
-     font-size:44px;
-     color: #291C0B;
-     /* for the round corners issue */
-     -webkit-filter: drop-shadow(5px 5px 5px #222);
-	 filter: drop-shadow(5px 5px 5px #222); 
+#enterButtonOverlay img, #enterButtonOverlay1 img, {  
+	cursor: pointer;
 }
 
-.frame {width: 100%; height: auto; overflow: hidden;}
+.frame {width: 100%; height: auto; overflow: hidden; position: relative;}
 
 /* Smartphones (portrait and landscape) col-xs ----------- */
 @media only screen and (min-width : 320px) {
 	.lego-logo img {
-		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 		position:relative;
 		z-index:1000;
-		margin:0px 0 0 2%;
-		width: 48px;
-		height: 46px;
+		width: 48px; height: 46px;
 		border-style: none;
 		border: 0;
+		cursor: pointer;
+		position: relative;
+		float: left;
 	}
-	.custom-height{height: 320px !important;} 
 
 	#legoHeader {
 		max-width:320px;
@@ -172,36 +185,76 @@ body {
 
 	}
 	
-	.homepage-middle-but {
-		max-width:320px;
-	}
-	
-	
-	.carousel img {
-		max-width:100%;
-		height:auto;
-	}
-	
-	.carousel {
+	#ninjago-carousel {
 		max-width:320px;
 		margin:0 auto;
 	}
 	
 }
 
+@media only screen and (min-width: 480px ) and (max-width: 766px){
+	.lego-logo img {
+		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+		position:relative;
+		z-index:1000;
+		width: 48px; height: 46px;
+		border-style: none;
+		border: 0;
+		cursor: pointer;
+		position: relative;
+		float: left;
+	}
+	
+	#legoHeader {
+		max-width:480px;
+		background-size:cover;
+		height:149px;
+		background:url(../img/lego-header-bg.png) no-repeat top right;
+		margin:0 auto;
+		overflow:hidden;
+	}
+		
+	#legoHeader .lego-ninjago-logo {
+		float:right;
+		margin-right:-300px;
+	}
+	
+	.homepage-middle {
+		max-width:480px;
+	}
+	
+	#lockOverlay {  
+		padding: 40px 0px 90px	
+	}
+	
+	#unlockOverlay {  
+		padding:  40px 0px 90px
+	}
+
+
+	
+	#ninjago-carousel {
+		max-width:480px;
+		margin:0 auto;
+	}
+	
+	/* Overide Boostrap!  */
+	.col-xs-12-override {width: 50% !important;}
+}
+
 /* Tablets (Portrait) col-sm  -----------  */
 @media only screen and (min-width : 767px) {
 	.lego-logo img {
-		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 		position:relative;
-		z-index:1000;
-		margin:0px 0 0 2%;
-		width: 48px;
-		height: 46px;
+		z-index:1000;		
+		width: 48px; height: 46px;
 		border-style: none;
 		border: 0;
+		cursor: pointer;
+		position: relative;
+		float: left;
 	}
-	.custom-height{height: 320px !important;} 
 	
 	#legoHeader {
 		max-width:640px;
@@ -226,20 +279,9 @@ body {
 	
 	.homepage-middle {
 		max-width:640px;
-		//height: 320px;
 	}
 	
-	.homepage-middle-but {
-		//max-width:100%;
-	
-	}
-	
-	.carousel img {
-		max-width:100%;
-		height:auto;
-	}
-	
-	.carousel {
+	#ninjago-carousel {
 		max-width:640px;
 		margin:0 auto;
 	}
@@ -250,33 +292,18 @@ body {
 	
 	.lego-logo img {
 		position:relative;
-		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 		z-index:1000;
-		//margin:20px 0 -20px 10%;
-		top: 20px; left: 20px;
-		width: 77px;
-		height: 73px;
+		top: 20px; 
+		width: 77px; height: 73px;
+		margin: 0 0 0 5px;	
 		border-style: none;
 		border: 0;
+		cursor:auto;
 	}
-	
-/*
-	.lego-logo {
-		margin:0 auto;
-		max-width:991px;
-		position:relative;
-	}
-*/
-	
-	#lockOverlay {  
-		padding: 62px 0px 120px
-	}
-	
-	
-	.custom-height{height: 246px !important;} 
 
 	#legoHeader {
-		max-width:991px;
+		max-width:1090px;
 		background-size:cover;
 		height:149px;
 		background:url(../img/lego-header-bg.png) no-repeat top right;
@@ -284,10 +311,11 @@ body {
 	}
 
 	#menuHolder {
-		max-width:991px;
+		z-index:1; 
+		max-width:1090px;
 		margin: -47px auto 0 auto;
 	}
-	
+
 	#legoHeader .lego-ninjago-logo {
 		float:right;
 		margin-right:100px;
@@ -296,25 +324,24 @@ body {
 	#homepage-top-head {
 		background-color:#fff;
 		height:52px;
-		max-width:991px;
+		max-width:1090px;
 		margin:0 auto;
 	}
 	
 	.homepage-middle {
-		max-width:991px;
-		height: 246px;
+		max-width:1090px;
 	}
 	
-	.homepage-middle-but {
-		max-width:247px;
-	}
-
-
-	.carousel img {
+	#lockOverlay {  
+		padding: 62px 0px 120px
 	}
 	
-	.carousel {
-		max-width:991px;
+	#unlockOverlay {  
+		padding: 62px 0px 120px
+	}
+	
+	#ninjago-carousel {
+		max-width:1090px;
 		margin:0 auto;
 	}
 }
@@ -325,13 +352,13 @@ body {
 	
 	.lego-logo img {
 		position:relative;
-		top: 20px; left: 20px;
-		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
-		width: 77px;
-		height: 73px;
+		top: 20px; //left: 30px;
+		width: 77px; height: 73px;
+		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 		border-style: none;
 		border: 0;
 		z-index:1000;
+		cursor:auto;
 	}
 	
 	#legoHeader {
@@ -341,14 +368,12 @@ body {
 		background:url(../img/lego-header-bg.png) no-repeat top right;
 		margin:0 auto;
 	}
-	
-	.custom-height{max-height: $seasonFullH !important;}
 
 	#menuHolder {
+		z-index:1; 
 		max-width:1369px; 
 		margin: -47px auto 0 auto;
 	}
-	
 	
 	#legoHeader .lego-ninjago-logo {
 		float:right;
@@ -364,18 +389,9 @@ body {
 	
 	.homepage-middle {
 		max-width:1369px;
-		height: $seasonFullH;
 	}
 	
-	.homepage-middle-but {
-		max-width:100%;
-		height: auto;
-	}
-	
-	.carousel img {
-	}
-	
-	.carousel {
+	#ninjago-carousel  {
 		max-width:1369px;
 		margin:0 auto;
 	}

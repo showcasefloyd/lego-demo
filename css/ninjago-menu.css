@@ -1,0 +1,70 @@
+#menuHolder {
+  display: block; }
+
+@media only screen and (min-width: 320px) {
+  #menuHolder {
+    display: none; } }
+
+@media only screen and (min-width: 480px) and (max-width: 766px) {
+  #menuHolder {
+    display: none; } }
+
+@media only screen and (min-width: 767px) {
+  #menuHolder {
+    display: none; } }
+
+@media only screen and (min-width: 991px) and (max-width: 1199px) {
+  #menuHolder {
+    background: url("../img/menu-bg-small-blank.gif") no-repeat top;
+    background-size: cover;
+    position: relative;
+    margin-top: -48px;
+    height: 48px;
+    display: block; } }
+
+/* Desktop (any orientation) And Tablets (Landscape)  col-lg ----------- */
+@media only screen and (min-width: 1200px) {
+  #menuHolder {
+    background: url("../img/menu-bg-blank.gif") no-repeat top;
+    background-size: contain;
+    position: relative;
+    margin-top: -48px;
+    height: 48px;
+    display: block; } }
+
+.ninjago-menu-links {
+  margin: 0 auto;
+  width: 1030px;
+  font-family: 'Exo 2',sans-serif;
+  font-size: 16px; }
+
+.ninjago-menu-links ul {
+  padding: 0;
+  margin: 0; }
+
+.ninjago-menu-links li {
+  list-style: none;
+  float: left;
+  margin: 4px 0 0;
+  vertical-align: middle; }
+
+/* ICONS */
+.ninjago-menu-links i {
+  margin-right: 1rem;
+  font-size: 1.8rem;
+  vertical-align: middle; }
+
+/* MENU LINKS */
+.ninjago-menu-links li a {
+  color: #fff;
+  padding: 1.2rem 1.8rem;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease; }
+
+.ninjago-menu-links li a:hover, .ninjago-menu-links li .active {
+  color: #000;
+  background-color: #fff; }

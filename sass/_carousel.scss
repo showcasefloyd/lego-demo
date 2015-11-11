@@ -1,0 +1,107 @@
+
+
+.own-ninjago {
+	max-width: 1369px;
+	height: auto;
+	margin: 0 auto;
+	background-color:#ffdd00;
+	//background:url(../img/lego-header-bg.png);
+	//background-size: cover; 
+}
+
+.ninjago-href {
+    width: 200px;
+    height: 200px;
+/*
+    background-color: white;
+    border: 1px solid red;
+*/
+    position: relative;
+    margin: 0px auto;
+    margin: 0 auto;
+    padding: 14% 22%;
+}
+
+
+.owl-theme .owl-controls {
+    text-align: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0px auto;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Styling Pagination*/
+.owl-theme .owl-controls .owl-page{
+	display: inline-block;
+	zoom: 1;
+	/* margin-top: 10% */
+	*display: inline;/*IE7 life-saver */
+}
+
+
+.owl-theme .owl-controls .owl-page span{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 2px 5px;
+	text-indent: -999px;
+	border: 3px solid #000;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span {
+    margin:2px 5px;
+	width: 20px;
+	height: 20px;
+	background-color: #FFF;
+	padding: 2px;
+}
+
+.owl-theme .owl-pagination {	
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	z-index: 15;
+	width: 60%;
+	margin-left: -30%;
+	padding-left: 0px;
+	list-style: outside none none;
+	text-align: center;
+}
+
+
+
+
+/* Paginatio styles */			
+.carousel-control {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 15%;
+    opacity: 0.5;
+    font-size: 20px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.owl-prev {
+	top:32%;
+}
+.owl-next {
+	left: auto;
+	right: 0px;
+	top:32%;
+
+}
+
+/* Custom forward, backward buttons */
+.owl-theme .owl-controls .owl-buttons div {}
