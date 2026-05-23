@@ -1,3 +1,12 @@
+import 'animate.css'
+import 'hover.css'
+import $ from './jquery-global.js'
+import 'bootstrap'
+import 'owl.carousel'
+import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'owl.carousel/dist/assets/owl.theme.default.css'
+import '../../sass/ninjago.scss'
+
 $(function () {
 	var endAni = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 	var $icon = $('span.hidden-menu-icon');
