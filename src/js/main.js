@@ -9,7 +9,7 @@ import '../../sass/ninjago.scss'
 
 $(function () {
 	var endAni = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-	var $icon = $('span.hidden-menu-icon');
+	var $icon = $('.hidden-menu-icon');
 	var menuopen = false;
 	preload("img/unlock-glow.png", "img/menu-bg-small-blank.gif");
 
