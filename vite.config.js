@@ -7,7 +7,7 @@ export default defineConfig({
     outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: 'src/ninjago.html'
+      input: path.resolve(import.meta.dirname, 'src/ninjago.html')
     }
   },
   css: {
