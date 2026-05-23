@@ -1,0 +1,21 @@
+{
+  "name": "lego-demo",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.3.3",
+    "bourbon": "^4.3.4",
+    "hover.css": "^2.3.2",
+    "jquery": "^3.7.1",
+    "owl.carousel": "^2.3.4"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0",
+    "vite": "^5.4.0"
+  }
+}
