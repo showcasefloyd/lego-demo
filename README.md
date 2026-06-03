@@ -1,6 +1,7 @@
-# README #
+# Lego Demo Site - Ninjago
 
-This is a private demo project I did for Lego
+Some years back I work on this as a demo project for Lego. The design and image assest were provided by Lego's own in house design team
+and I was task with building out a mobile friendly site.
 
 ### What is this repository for? ###
 

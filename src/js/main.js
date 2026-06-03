@@ -1,11 +1,12 @@
-import 'animate.css'
-import 'hover.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'animate.css'
+// import 'hover.css'
+
+// import "../node_modules/bootstrap/scss/bootstrap";
 import $ from './jquery-global.js'
-import 'bootstrap'
-import 'owl.carousel'
-import 'owl.carousel/dist/assets/owl.carousel.css'
-import 'owl.carousel/dist/assets/owl.theme.default.css'
+// import 'bootstrap'
+// import 'owl.carousel'
+// import 'owl.carousel/dist/assets/owl.carousel.css'
+// import 'owl.carousel/dist/assets/owl.theme.default.css'
 import '../sass/ninjago.scss'
 
 $(function () {

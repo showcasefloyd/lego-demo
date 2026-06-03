@@ -1,8 +1,10 @@
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-@import "bourbon/app/assets/stylesheets/bourbon";
-   
+//@use "bourbon";
+@use "mobilemenu";
+@use "footer-styles";
+@use "custom-animations";
+@use "carousel";
+
+
 $seasonFullW: 	343px;
 $seasonFullH: 	340px;
 
@@ -25,18 +27,14 @@ $MaxMobile: 	766px;
 $background-color:#280203;
 $lego-red: #E10D1D;
 
-
 $thumbnails: (
   "../img/lego-ninjago-season-01.jpg",
   "../img/lego-ninjago-season-02.jpg",
   "../img/lego-ninjago-season-03.jpg",
   "../img/lego-ninjago-season-04.jpg"
 );
-   
-@import 'reset';
 
 body {
-	//background-color:$background-color;
 	background-image:url('../img/bgs/branding-main-frontpage-background-2hy.jpg');
 	background-size: cover;
 	background-repeat:no-repeat;
@@ -46,7 +44,6 @@ body {
 .site-top-menu {
 	background-color:#fff;
 }
-
 
 #logoWrapper {
 	// 	margin: 0 0 0 5px;
@@ -62,7 +59,6 @@ body {
 	max-width:1000px;
 }
 
-
 /* Menu across the top of the page. Fix for the animation */
 #menuHolder {
 	position: relative;
@@ -73,33 +69,22 @@ body {
 	width:100%;
 }
 
-/* Footer Styles */
-@import 'footer-styles';
-
-/* Animation Styles */
-@import 'custom-animations';
-
-/* Carousel */
-@import 'carousel';
-
-
-@import 'mobilemenu';
 
 /* Action Button */
-@each $thumbnail in $thumbnails {
+// @each $thumbnail in $thumbnails {
    
-    $i: index($thumbnails, $thumbnail);
+//     $i: index($thumbnails, $thumbnail);
     
-    #buttonWrapper#{$i} { 
-		max-width:$seasonFullW;
-		height:$seasonFullH;	
-		background-image: url( $thumbnail);
-		background-repeat: no-repeat;
-		background-size: contain;
-		position: relative;
-    }
-	//#project-#{$i}:hover #lockOverlay { opacity:1;}
-}
+//     #buttonWrapper#{$i} { 
+// 		max-width:$seasonFullW;
+// 		height:$seasonFullH;	
+// 		background-image: url( $thumbnail);
+// 		background-repeat: no-repeat;
+// 		background-size: contain;
+// 		position: relative;
+//     }
+// 	//#project-#{$i}:hover #lockOverlay { opacity:1;}
+// }
 
 /* Lock Overlay */
  #unlockOverlay1, #lockOverlay3, #lockOverlay4 {  
@@ -113,14 +98,13 @@ body {
 	-moz-box-shadow:    inset 0px 0px 20px #000000;
     -webkit-box-shadow: inset 0px 0px 20px #000000;
     z-index: 100;
-	@include transition(all .8s ease-in  0s);
+	// @include transition(all .8s ease-in  0s);
 }
 
  #frame2 div, #frame2 img {
      cursor:url(../img/key-36.png),auto;
  }
  
-
  #unlockOverlay1:hover, #lockOverlay3:hover, #lockOverlay4:hover {
   	background-color: black;
   	opacity: .7;
@@ -145,7 +129,7 @@ body {
 	z-index: 50;
 }
 
-#enterButtonOverlay img, #enterButtonOverlay1 img, {  
+#enterButtonOverlay img, #enterButtonOverlay1 img {  
 	cursor: pointer;
 }
 
@@ -181,8 +165,6 @@ body {
 	
 	.homepage-middle {
 		max-width:320px;
-		//height:320px;
-
 	}
 	
 	#ninjago-carousel {
@@ -345,7 +327,6 @@ body {
 		margin:0 auto;
 	}
 }
-
 
 /* Desktop (any orientation) And Tablets (Landscape)  col-lg ----------- */
 @media only screen and (min-width : 1200px) {
