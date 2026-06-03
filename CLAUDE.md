@@ -16,7 +16,7 @@ npm run preview  # preview production build locally
 
 The entry point is `src/ninjago.html`. Vite serves from `src/` as its root.
 
-SCSS in `sass/` is compiled by Vite via the `sass` package — no separate compilation step needed.
+SCSS in `src/sass/` is compiled by Vite via the `sass` package — no separate compilation step needed.
 
 ## Architecture
 
@@ -34,7 +34,7 @@ The project contains multiple iteration versions of the same page. Each version 
 
 ### Sass structure
 
-`sass/ninjago.scss` is the entry point and imports partials:
+`src/sass/ninjago.scss` is the entry point and imports partials:
 - `_reset.scss` — base reset
 - `_footer-styles.scss` — footer layout
 - `_custom-animations.scss` — Animate.css integration helpers
