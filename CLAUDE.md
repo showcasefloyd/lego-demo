@@ -21,6 +21,8 @@ SCSS in `src/sass/` is compiled by Vite via the `sass` package — no separate c
 We are migrating the code from an older code base to newer libraries and architecture.
 We should try and address any build time warnings as they come up and strive for a clean build.
 
+Since we are factoring make sure we update this CLAUDE.md to keep up with changes to the project
+
 ## Architecture
 
 ### Versioned pages

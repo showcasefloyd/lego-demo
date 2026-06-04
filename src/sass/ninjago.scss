@@ -1,9 +1,10 @@
+@use "footer-styles";
 //@use "bourbon";
 @use "mobilemenu";
-@use "footer-styles";
 @use "custom-animations";
 @use "carousel";
 
+@import 'bootstrap/scss/bootstrap';
 
 $seasonFullW: 	343px;
 $seasonFullH: 	340px;
@@ -27,12 +28,12 @@ $MaxMobile: 	766px;
 $background-color:#280203;
 $lego-red: #E10D1D;
 
-$thumbnails: (
-  "../img/lego-ninjago-season-01.jpg",
-  "../img/lego-ninjago-season-02.jpg",
-  "../img/lego-ninjago-season-03.jpg",
-  "../img/lego-ninjago-season-04.jpg"
-);
+// $thumbnails: (
+//   "../img/lego-ninjago-season-01.jpg",
+//   "../img/lego-ninjago-season-02.jpg",
+//   "../img/lego-ninjago-season-03.jpg",
+//   "../img/lego-ninjago-season-04.jpg"
+// );
 
 body {
 	background-image:url('../img/bgs/branding-main-frontpage-background-2hy.jpg');
@@ -49,25 +50,27 @@ body {
 	// 	margin: 0 0 0 5px;
 	position: relative;
 	height: 47px;
+	top:0;
+	margin: 0;
+	padding: 0;
 	z-index: 100; 
 }
 
 /* Homepage LEGO Branding */
 .lego-logo {
 	margin:0 auto;
-	//max-width:1369px;
 	max-width:1000px;
 }
 
 /* Menu across the top of the page. Fix for the animation */
-#menuHolder {
-	position: relative;
-	z-index:1; 
-}
+// #menuHolder {
+// 	position: relative;
+// 	z-index:1; 
+// }
 
-#ninjago-menu-sm {
-	width:100%;
-}
+// #ninjago-menu-sm {
+// 	width:100%;
+// }
 
 
 /* Action Button */
@@ -87,23 +90,23 @@ body {
 // }
 
 /* Lock Overlay */
- #unlockOverlay1, #lockOverlay3, #lockOverlay4 {  
-	background-color: black;
-	text-align:center;
-	padding:25% 0 150px 0;
-	width: 100%;
-	opacity:.5;
-	position: absolute;
-	box-shadow:         inset 0px 0px 20px #000000;
-	-moz-box-shadow:    inset 0px 0px 20px #000000;
-    -webkit-box-shadow: inset 0px 0px 20px #000000;
-    z-index: 100;
-	// @include transition(all .8s ease-in  0s);
-}
+//  #unlockOverlay1, #lockOverlay3, #lockOverlay4 {  
+// 	background-color: black;
+// 	text-align:center;
+// 	padding:25% 0 150px 0;
+// 	width: 100%;
+// 	opacity:.5;
+// 	position: absolute;
+// 	box-shadow:         inset 0px 0px 20px #000000;
+// 	-moz-box-shadow:    inset 0px 0px 20px #000000;
+//     -webkit-box-shadow: inset 0px 0px 20px #000000;
+//     z-index: 100;
+// 	// @include transition(all .8s ease-in  0s);
+// }
 
- #frame2 div, #frame2 img {
-     cursor:url(../img/key-36.png),auto;
- }
+//  #frame2 div, #frame2 img {
+//      cursor:url(../img/key-36.png),auto;
+//  }
  
  #unlockOverlay1:hover, #lockOverlay3:hover, #lockOverlay4:hover {
   	background-color: black;
